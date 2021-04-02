@@ -2,8 +2,21 @@ package com.moodanalyser;
 
 public class MoodAnalyser {
 
-	public static void main(String args[]){
+    String message;
+    public MoodAnalyser() {
+    }
 
-		System.out.println("This is Mood Analyzer Problem!");
-	}
+    public MoodAnalyser(String message) {
+        this.message = message;
+    }
+
+    public String analyseMood() {
+        if (message.contains("Sad")) {
+            return "SAD";
+        }else {
+            return "HAPPY";
+        }
+    }
 }
+
+
