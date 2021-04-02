@@ -18,5 +18,13 @@ public class ValidationOfMood {
         String mood = moodAnalyser.analyseMood();
         Assertions.assertEquals("HAPPY", mood);
     }
+
+	@Test
+    void givenMessage_WhenItIsNull_ShouldReturnHappy() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("NULL");
+        String mood = moodAnalyser.analyseMood();
+        Assertions.assertEquals("HAPPY", mood);
+        System.out.println("This is NULL case.");
+    }
 }
 
