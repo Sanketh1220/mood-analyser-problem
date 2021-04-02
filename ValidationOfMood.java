@@ -21,7 +21,7 @@ public class ValidationOfMood {
 
 	@Test
     void givenMessage_WhenItIsNull_ShouldReturnHappy() {
-        MoodAnalyser moodAnalyser = new MoodAnalyser("NULL");
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
         String mood = moodAnalyser.analyseMood();
         Assertions.assertEquals("HAPPY", mood);
         System.out.println("This is NULL case.");
