@@ -26,5 +26,27 @@ public class ValidationOfMood {
         Assertions.assertEquals("HAPPY", mood);
         System.out.println("This is NULL case.");
     }
+
+	 @Test
+    void givenMessage_AsNull_Should_Return_Respective_Message() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+        try {
+            moodAnalyser.analyseMood();
+        }
+        catch (MoodAnalysisException e){
+            Assertions.assertEquals(MoodAnalysisException.exceptionType.given_null_input, e.type);
+        }
+    }
+
+    @Test
+    void givenMessage_Invalid_Should_Return_Respective_Message() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("");
+        try {
+            moodAnalyser.analyseMood();
+        }
+        catch (MoodAnalysisException e){
+            Assertions.assertEquals(MoodAnalysisException.exceptionType.getGiven_empty_input, e.type);
+        }
+    }
 }
 
